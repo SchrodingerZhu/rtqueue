@@ -207,11 +207,13 @@ pub mod rt_queue {
             let mut q = history_v[i].clone();
             let mut vec = history[i].clone();
             vec.reverse();
-            for _ in 0..random::<usize>() % vec.len() {
-                vec.pop();
-                q = q.pop();
+            if vec.len() > 0 {
+                for _ in 0..random::<usize>() % vec.len() {
+                    vec.pop();
+                    q = q.pop();
+                }
+                vec.reverse();
             }
-            vec.reverse();
             history_v.push(q);
             history.push(vec);
         }
