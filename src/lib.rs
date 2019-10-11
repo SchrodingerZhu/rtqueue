@@ -215,7 +215,7 @@ pub mod rt_queue {
             history_v.push(q);
             history.push(vec);
         }
-        for i in 0..40 {
+        for i in 0..=40 {
             let mut vp : Vec<u128> = Vec::new();
             let mut q = history_v[i].clone();
             while !q.is_empty() {
